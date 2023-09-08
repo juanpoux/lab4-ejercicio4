@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="text-center">
+    <span>Bienvenido</span>
+    <span *ngIf="userName"> {{ userName }} </span>
+  </h1>
+
+  <div class="d-flex justify-content-center mt-5">
+    <div
+      *ngIf="!userName; else logoutButton"
+      class="d-flex justify-content-center"
+    >
+      <a routerLink="/login" class="btn btn-info text-center">
+        Iniciar sesión
+      </a>
+
+      <p class="ms-3" [ngStyle]="{ margin: 'auto 0' }">
+        Si no tiene cuenta puede
+        <a routerLink="/register" class="link-primary"> Registrarse </a>
+      </p>
+    </div>
+    <ng-template #logoutButton>
+      <button class="btn btn-dark text-center" (click)="logoutUser()">
+        Cerrar sesión
+      </button>
+    </ng-template>
+  </div>
+</div>

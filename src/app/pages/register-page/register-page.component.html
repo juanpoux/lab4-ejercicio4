@@ -1,0 +1,69 @@
+<div class="container d-flex justify-content-center">
+  <form class="w-50">
+    <h1 class="text-center">Iniciar sesión</h1>
+
+    <div class="form-floating mb-3">
+      <input
+        [(ngModel)]="user.name"
+        type="text"
+        class="form-control"
+        name="formId1"
+        id="formId1"
+        placeholder=""
+      />
+      <label for="formId1">Nombre</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input
+        [(ngModel)]="user.userName"
+        type="text"
+        class="form-control"
+        name="formId1"
+        id="formId1"
+        placeholder=""
+      />
+      <label for="formId1">Usuario</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input
+        [(ngModel)]="user.password"
+        type="password"
+        class="form-control"
+        name="formId2"
+        id="formId2"
+        placeholder=""
+      />
+      <label for="formId2" class="form-label">Contraseña</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input
+        [(ngModel)]="user.confirmPassword"
+        type="password"
+        class="form-control"
+        name="formId2"
+        id="formId2"
+        placeholder=""
+      />
+      <label for="formId2" class="form-label">Confirmar contraseña</label>
+    </div>
+
+    <p
+      class="text-center"
+      [ngStyle]="{ color: 'red', fontSize: '20px' }"
+      *ngIf="error"
+    >
+      {{ error }}
+    </p>
+
+    <div class="d-flex justify-content-center gap-2">
+      <button (click)="registerUser()" class="btn btn-primary">
+        Registrarse
+      </button>
+      <button type="reset" class="btn btn-outline-warning">Reset</button>
+    </div>
+    <a class="btn btn-link" routerLink="/home">Volver a la página principal</a>
+  </form>
+</div>
